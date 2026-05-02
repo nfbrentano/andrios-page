@@ -13,15 +13,24 @@ const Hero = forwardRef(function Hero({ onNavigate }, ref) {
 
       {/* Content */}
       <div className={styles.heroContent}>
-        <span className={styles.heroTag}>Arquitetura · 3D · Cinema</span>
+        <span className={styles.heroTag} style={{ opacity: 0, animation: 'fadeUp 1s ease forwards' }}>Arquitetura · 3D · Cinema</span>
 
         <h1 className={styles.heroTitle}>
-          ÂNDRIO<br />
-          <span className={styles.heroTitleAccent}>VICARI</span>
+          <span className={styles.revealWrapper}>
+            <span className={`${styles.revealText} ${styles.delay1}`}>ÂNDRIO</span>
+          </span>
+          <br />
+          <span className={styles.revealWrapper}>
+            <span className={`${styles.revealText} ${styles.delay2} ${styles.heroTitleAccent}`}>VICARI</span>
+          </span>
         </h1>
 
         <p className={styles.heroSubtitle}>
-          Layout 3D para filmes, publicidade e narrativas visuais
+          <span className={styles.revealWrapper}>
+            <span className={`${styles.revealText} ${styles.delay3}`}>
+              Layout 3D para filmes, publicidade e narrativas visuais
+            </span>
+          </span>
         </p>
 
         <p className={styles.heroDescription}>
@@ -34,6 +43,15 @@ const Hero = forwardRef(function Hero({ onNavigate }, ref) {
           className={styles.heroCta}
           onClick={() => onNavigate('projects')}
           aria-label="Ver portfólio de trabalhos"
+          onMouseMove={(e) => {
+            const rect = e.target.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            e.target.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.transform = '';
+          }}
         >
           Ver trabalhos
           <span className={styles.heroCtaArrow} aria-hidden="true">↓</span>
