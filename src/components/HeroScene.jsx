@@ -179,8 +179,9 @@ const HeroScene = () => {
       window.addEventListener('mousemove', onMouseMove);
     }
 
+    let animId;
     const animate = () => {
-      requestAnimationFrame(animate);
+      animId = requestAnimationFrame(animate);
 
       // Smooth parallax
       targetX += (mouseX - targetX) * 0.02;
@@ -222,6 +223,7 @@ const HeroScene = () => {
     window.addEventListener('resize', handleResize);
 
     return () => {
+      cancelAnimationFrame(animId);
       clearTimeout(timer);
       window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('resize', handleResize);

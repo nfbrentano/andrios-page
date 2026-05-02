@@ -1,17 +1,40 @@
-# React + Vite
+# Ândrio Vicari — Portfólio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Sobre
+Portfólio profissional de Ândrio Vicari, arquiteto e especialista em concepção de layouts tridimensionais (3D) para produções audiovisuais. O projeto funciona como um catálogo digital de alto padrão focado em cenografia virtual, estudos de espaço e volumetric layouts para filmes e campanhas de publicidade.
 
-Currently, two official plugins are available:
+## Preview
+[![Website Status](https://img.shields.io/website-up-down-green-red/https/nfbrentano.github.io/andrios-page.svg)](https://nfbrentano.github.io/andrios-page/)
+[Acesse o site ao vivo aqui](https://nfbrentano.github.io/andrios-page/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Stack
+Este projeto foi construído utilizando as seguintes tecnologias:
+- **React** (Biblioteca UI)
+- **Vite** (Build Tool e Dev Server)
+- **Three.js** (Renderização 3D na Hero Section)
+- **CSS Modules** (Estilização isolada)
+- **GitHub Pages** (Deploy)
 
-## React Compiler
+## Como rodar localmente
+Clone o repositório e execute os comandos abaixo na pasta do projeto:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+# Instalar dependências
+npm install
 
-## Expanding the ESLint configuration
+# Iniciar o servidor de desenvolvimento
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# andrios-page
+## Deploy
+O deploy do site é feito no GitHub Pages. Para publicar uma nova versão:
+
+```bash
+# O script de deploy (se configurado no package.json com gh-pages) geralmente faz o build automático
+npm run deploy
+```
+Ou manualmente (caso use actions/scripts simples):
+```bash
+npm run build
+```
+E realize o push da pasta `dist` para a branch `gh-pages` (ou conforme a configuração de Actions do repositório).
